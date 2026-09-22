@@ -1,0 +1,35 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+header{
+    background-color: black;
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 15vh;
+        .logo{
+            img{
+                width: 150px;
+                height: auto;
+
+            }
+        }
+        .links{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            .submenu{
+                display: flex;
+                flex-direction: row;
+                .streaming{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}
