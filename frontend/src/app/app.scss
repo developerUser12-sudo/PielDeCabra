@@ -1,35 +1,141 @@
-a{
-    text-decoration: none;
-    color: white;
-}
-header{
-    background-color: black;
-    nav{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+header {
+    background-color: $color-marron;
+
+    nav {
+
+        @include flex(row, space-around, center, 0);
         height: 15vh;
-        .logo{
-            img{
-                width: 150px;
+
+        .logo {
+            img {
+                width: 200px;
                 height: auto;
 
             }
         }
-        .links{
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            .submenu{
-                display: flex;
-                flex-direction: row;
-                .streaming{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
+
+        .links {
+
+            @include flex($direction: row, $gap: 2rem);
+
+            .submenu {
+
+                @include flex($direction: row, $gap: 0.3rem);
+
+                .streaming {
+
+                    @include flex($direction: column, $gap: 20px);
+
+                    .submenu-contenido {
+                        background-color: white;
+                        position: absolute;
+                        margin-top: 30px;
+                        height: 30px;
+                        border-radius: 5px;
+                        @include flex($align: center);
+                        opacity: 0;
+                        visibility: hidden;
+
+                        transition:
+                            opacity 0.3s ease,
+                            transform 0.3s ease,
+                            visibility 0.3s ease;
+
+                        a {
+                            color: black;
+                            padding: 20px;
+
+                        }
+
+                        &.abierto {
+                            opacity: 1;
+                            visibility: visible;
+
+                        }
+                    }
+                }
+
+
+                button {
+                    background-color: $color-marron;
+                    border: 0;
+                    color: white;
+                    cursor: pointer;
+                    transition: transform 0.3s ease;
+
+                    &.abierto {
+                        transform: rotate(180deg);
+                    }
+
+                }
+            }
+
+            @media (hover: hover) {
+                .submenu:hover {
+                    button {
+                        transform: rotate(180deg);
+                    }
+
+                    .streaming {
+                        .submenu-contenido {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
                 }
             }
         }
+    }
+}
+
+footer {
+
+    @include flex(row, space-around, center, 0);
+    background-color: $color-marron;
+    color: white;
+    padding: 20px;
+
+    .redes-sociales {
+
+        @include flex($direction: row, $gap: 15px);
+
+        img {
+            width: 30px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .politicas {
+        @include flex($direction: row, $gap: 15px);
+
+
+    }
+}
+
+@media (max-width:800px) {
+    header {
+        nav {
+            @include flex(column, space-around, center, 20px);
+            height: 40vh;
+
+            .links {
+                @include flex(column, space-around, center, 20px);
+
+            }
+
+        }
+    }
+
+    
+}
+@media (max-width:1000px) {
+
+    footer {
+        @include flex(column, space-around, center, 20px);
+
     }
 }

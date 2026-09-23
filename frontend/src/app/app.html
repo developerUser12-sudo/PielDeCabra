@@ -10,11 +10,12 @@
       <div class="submenu">
         <div class="streaming">
           <a routerLink="/producciones">Producciones</a>
-          @if(menuAbierto){
-          <a routerLink="/streaming">Streaming</a>
-          }
+          <div class="submenu-contenido" [class.abierto]="menuAbierto">
+            <a routerLink="/streaming">Streaming</a>
+          </div>
+          
         </div>
-        <button (click)="menuAbierto = !menuAbierto">
+        <button [class.abierto]="menuAbierto" (click)="menuAbierto = !menuAbierto">
           ▼
         </button>
       </div>
@@ -23,4 +24,28 @@
     </div>
   </nav>
 </header>
-<router-outlet></router-outlet>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <div class="redes-sociales">
+    <a href="https://twitter.com/https://x.com/pieldecabrapc" target="_blank"><img src="iconos/x-twitter.svg"
+        alt="X-Twitter"></a>
+    <a href="https://www.facebook.com/Pieldecabra" target="_blank"><img src="iconos/facebook.svg" alt="Facebook"></a>
+    <a href="https://instagram.com/pieldecabrapc" target="_blank"><img src="iconos/instagram.svg" alt="Instagram"></a>
+    <a href="https://www.linkedin.com/in/piel-de-cabra-pc/" target="_blank"><img src="iconos/linkedin.svg"
+        alt="Linkedin"></a>
+    <a href="https://www.youtube.com/@PIELDECABRAPRODUCCIONES?app=desktop" target="_blank"><img src="iconos/youtube.svg"
+        alt="Youtube"></a>
+
+
+  </div>
+  <div>
+    Más info: info@pieldecabra.es
+  </div>
+  <div class="politicas">
+    <a routerLink="/politica-privacidad">Política de privacidad</a>
+    <a routerLink="/politica-cookies">Política de cookies</a>
+    <a routerLink="/aviso-legal">Aviso legal</a>
+  </div>
+</footer>
