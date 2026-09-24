@@ -30,7 +30,7 @@ header {
                     @include flex($direction: column, $gap: 20px);
 
                     .submenu-contenido {
-                        background-color: white;
+                        background-color: $color-arena;
                         position: absolute;
                         margin-top: 30px;
                         height: 30px;
@@ -45,7 +45,7 @@ header {
                             visibility 0.3s ease;
 
                         a {
-                            color: black;
+                            color: $color-marron;
                             padding: 20px;
 
                         }
@@ -135,7 +135,17 @@ footer {
 @media (max-width:1000px) {
 
     footer {
-        @include flex(column, space-around, center, 20px);
+        @include flex(column, space-around, center, 25px);
+
+    }
+}
+@media (max-width:440px) {
+
+    footer {
+        .politicas{
+            flex-direction: column;
+            text-align: center;
+        }
 
     }
 }

@@ -1,0 +1,6 @@
+CREATE TABLE planes (
+    id BIGSERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    visionados INTEGER NOT NULL,
+    precio NUMERIC(10,2) NOT NULL
+);
