@@ -1,0 +1,8 @@
+<div class="inicio-sesion-cuadro">
+    <h3>Inicio de sesión como administrador</h3>
+    <form (ngSubmit)="iniciarSesion()" class="form-inicio-sesion">
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Correo electrónico" required>
+        <input type="password" [(ngModel)]="contrasena" name="contrasena" placeholder="Contraseña" required>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+</div>

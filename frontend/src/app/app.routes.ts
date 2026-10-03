@@ -8,6 +8,8 @@ import { Streaming } from './streaming/streaming';
 import { Politicaprivacidad } from './politicaprivacidad/politicaprivacidad';
 import { Politicacookies } from './politicacookies/politicacookies';
 import { Avisolegal } from './avisolegal/avisolegal';
+import { Loginadmin } from './loginadmin/loginadmin';
+import { Paneladmin } from './paneladmin/paneladmin';
 
 export const routes: Routes = [
     {path:'',component:Inicio},
@@ -19,4 +21,6 @@ export const routes: Routes = [
     {path:'politica-privacidad',component:Politicaprivacidad},
     {path:'politica-cookies',component:Politicacookies},
     {path:'aviso-legal',component:Avisolegal},
+    {path:'login-admin',component:Loginadmin},
+    {path:'panel-admin',component:Paneladmin},
 ];
