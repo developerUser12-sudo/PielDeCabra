@@ -1,4 +1,4 @@
-package com.pieldecabra.entity;
+package com.pieldecabra.backend.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.pieldecabra.service;
+package com.pieldecabra.backend.service;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.pieldecabra.entity.Admin;
-import com.pieldecabra.repository.AdminRepository;
+import com.pieldecabra.backend.entity.Admin;
+import com.pieldecabra.backend.repository.AdminRepository;
 
 @Service
 public class AdminDetailsService implements UserDetailsService {
