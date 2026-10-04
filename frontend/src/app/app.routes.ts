@@ -10,17 +10,17 @@ import { Politicacookies } from './politicacookies/politicacookies';
 import { Avisolegal } from './avisolegal/avisolegal';
 import { Loginadmin } from './loginadmin/loginadmin';
 import { Paneladmin } from './paneladmin/paneladmin';
-
+import { adminGuard } from './guards/admin.guard';
 export const routes: Routes = [
-    {path:'',component:Inicio},
-    {path:'quienes-somos',component:Quienessomos},
-    {path:'proyectos',component:Proyectos},
-    {path:'producciones',component:Producciones},
-    {path:'contacto',component:Contacto},
-    {path:'streaming',component:Streaming},
-    {path:'politica-privacidad',component:Politicaprivacidad},
-    {path:'politica-cookies',component:Politicacookies},
-    {path:'aviso-legal',component:Avisolegal},
-    {path:'login-admin',component:Loginadmin},
-    {path:'panel-admin',component:Paneladmin},
+    { path: '', component: Inicio },
+    { path: 'quienes-somos', component: Quienessomos },
+    { path: 'proyectos', component: Proyectos },
+    { path: 'producciones', component: Producciones },
+    { path: 'contacto', component: Contacto },
+    { path: 'streaming', component: Streaming },
+    { path: 'politica-privacidad', component: Politicaprivacidad },
+    { path: 'politica-cookies', component: Politicacookies },
+    { path: 'aviso-legal', component: Avisolegal },
+    { path: 'login-admin', component: Loginadmin },
+    { path: 'panel-admin', component: Paneladmin, canActivate: [adminGuard] },
 ];

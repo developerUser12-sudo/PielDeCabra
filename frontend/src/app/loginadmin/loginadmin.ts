@@ -15,6 +15,15 @@ export class Loginadmin {
   constructor(private authService: AuthService, private router: Router) {
 
   }
+  ngOnInit(){
+    this.authService.comprobarSesion().subscribe({
+      next:(autenticado)=>{
+        if (autenticado) {
+          this.router.navigate(['/panel-admin']);
+        }
+      }
+    })
+  }
   iniciarSesion() {
     this.authService.login(this.email, this.contrasena).subscribe({
       next: (respuesta) => {
