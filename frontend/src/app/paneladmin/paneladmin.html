@@ -1,1 +1,30 @@
-<p>paneladmin works!</p>
+<div class="panel-admin-cuadro">
+    <h2>Panel de administrador</h2>
+    <form (ngSubmit)="crearDocumental()" class="form-crear-documental">
+        <div>
+            <label for="titulo">Título</label>
+            <input id="titulo" type="text" [(ngModel)]="titulo" name="titulo" placeholder="Título" required>
+        </div>
+        <div>
+            <label for="sinopsis">Sinopsis</label>
+            <textarea id="sinopsis" name="sinopsis" [(ngModel)]="sinopsis" placeholder="Sinopsis" required></textarea>
+        </div>
+        <div>
+            <label for="anoProduccion">Año de producción</label>
+            <input id="anoProduccion" type="number" [(ngModel)]="anoProduccion" name="anoProduccion" placeholder="Año de producción" required>
+        </div>
+        <div>
+            <label for="duracion">Duración (minutos)</label>
+            <input id="duracion" type="number" [(ngModel)]="duracion" name="duracion" placeholder="Duración en minutos" required>
+        </div>
+        <div>
+            <label for="cartel">Cartel</label>
+            <input id="cartel" type="text" [(ngModel)]="cartel" name="cartel" placeholder="URL del cartel" required>
+        </div>
+        <div>
+            <label for="iframe">Vídeo</label>
+            <input id="iframe" type="text" [(ngModel)]="iframe" name="iframe" placeholder="URL del iframe" required>
+        </div>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+</div>

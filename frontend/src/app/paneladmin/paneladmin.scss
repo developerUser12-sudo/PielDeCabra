@@ -1,0 +1,41 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.panel-admin-cuadro {
+
+    background-color: $color-arena;
+    color: $color-marron;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 10px;
+    h2 {
+        text-align: center;
+    }
+}
+
+.form-crear-documental {
+    @include flex($direction: column, $gap: 20px, $align: center);
+    padding: 20px;
+    button {
+        background-color: $color-marron;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: 0;
+    }
+    textarea{
+        max-width: 300px;
+        max-height: 200px;
+    }
+    div {
+        @include flex($direction: column, $gap: 5px, $align: center);
+
+    }
+}
+
+:host {
+    width: 100%;
+    @include flex($justify: center, $align: center);
+    padding: 20px;
+
+}
